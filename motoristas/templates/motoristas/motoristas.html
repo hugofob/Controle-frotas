@@ -1,0 +1,151 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head>
+        {% load static %}
+
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Motoristas | Controle de Frota</title> 
+        <link rel="stylesheet" href="{% static 'motoristas/css/motoristas.css' %}"> <!-- Font Awesome --> <script src="https://kit.fontawesome.com/412e60f1c7.js" crossorigin="anonymous">
+        </script> 
+    </head> 
+    <body> <!-- CABEÇALHO --> 
+        <header class="cabecalho"> 
+            <div class="logo"> 
+                <i class="fa-solid fa-truck"></i> <span>Controle de Frota</span>
+            </div> 
+        </header> <!-- CONTEÚDO --> 
+        <main class="conteudo"> <!-- TÍTULO --> 
+            <section class="titulo"> 
+                <h1> <i class="fa-solid fa-id-card"></i> Cadastro de Motoristas </h1> 
+                <p> Cadastre e organize os motoristas da sua frota. </p> 
+            </section> <!-- FORMULÁRIO --> 
+            
+            <section class="card"> 
+                <h2> <i class="fa-solid fa-user-plus"></i> Novo motorista 
+                </h2> 
+                <form method="POST"> <!-- NOME -->
+
+                    {% csrf_token %}
+                    <div class="campo campo-completo"> 
+                        <label for="nome"> Nome completo </label> 
+                        <input type="text" id="nome" name="nome" placeholder="Digite o nome completo" maxlength="100" required > 
+                    </div> <!-- ENDEREÇO --> 
+                    
+                    <div class="campo campo-completo"> 
+                        <label for="endereco"> Endereço </label> 
+                        <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro, cidade" maxlength="200" required > 
+                    </div> <!-- CNH --> 
+                    
+                    <div class="campo"> 
+                        <label for="cnh"> Carteira de habilitação (CNH) </label> <input type="text" id="cnh" name="cnh" placeholder="Digite o número da CNH" maxlength="20" required > 
+                    </div> <!-- CATEGORIA --> 
+                    
+                    <div class="campo"> 
+                        <label for="categoria"> Categoria da CNH </label> <select id="categoria" name="categoria" required > <option value=""> Selecione a categoria </option> <option value="A"> A - Motocicletas </option> 
+                            <option value="B"> B - Automóveis </option> 
+                            <option value="C"> C - Caminhões </option> 
+                            <option value="D"> D - Ônibus e micro-ônibus</option> 
+                            <option value="E"> E - Veículos articulados </option> 
+                        </select> 
+                    </div> <!-- TELEFONE --> 
+                    
+                    <div class="campo"> 
+                        <label for="telefone"> Telefone </label> 
+                        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" maxlength="15" required > 
+                    </div> <!-- EMAIL --> 
+                    
+                    <div class="campo"> 
+                        <label for="email"> E-mail </label> 
+                        <input type="email" id="email" name="email" placeholder="motorista@email.com" maxlength="100" required > 
+                    </div> <!-- BOTÃO --> 
+                    <button type="submit" class="botao-cadastrar" > 
+                        <i class="fa-solid fa-user-plus"></i> Cadastrar motorista 
+                    </button> 
+                </form> 
+            </section> <!-- LISTA DE MOTORISTAS --> 
+            <section class="card"> 
+                <div class="titulo-lista"> 
+                    <div> 
+                        <h2> <i class="fa-solid fa-users"></i> Motoristas cadastrados 
+                        </h2> 
+                        <p> Consulte os motoristas registrados no sistema. </p> 
+                    </div> 
+                    <span class="contador">
+                        {{ motoristas|length }} motorista(s)
+                    </span>
+                </div> <!-- TABELA --> 
+                <div class="tabela-container"> 
+                    <table> 
+                        <thead> 
+                            <tr> 
+                                <th>Nome</th> 
+                                <th>CNH</th> 
+                                <th>Categoria</th> 
+                                <th>Telefone</th> 
+                                <th>E-mail</th> 
+                                <th>Ações</th> 
+                            </tr> 
+                        </thead>
+                        <tbody>
+
+                            {% for motorista in motoristas %}
+
+                                <tr>
+
+                                    <td>{{ motorista.nome }}</td>
+
+                                    <td>{{ motorista.cnh }}</td>
+
+                                    <td>{{ motorista.categoria }}</td>
+
+                                    <td>{{ motorista.telefone }}</td>
+
+                                    <td>{{ motorista.email }}</td>
+
+                                    <td>
+                                        <a href="{% url 'editar_motorista' motorista.id %}" class="botao-editar" title="Editar motorista">
+                                            ✏️
+                                        </a>
+
+                                        <a href="{% url 'excluir_motorista' motorista.id %}" class="botao-excluir" title="Excluir motorista">
+                                            <i class="fa-solid fa-trash"></i>
+                                            🗑️
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                            {% empty %}
+
+                                <tr class="sem-motoristas">
+
+                                    <td colspan="6">
+
+                                        <i class="fa-solid fa-user-slash"></i>
+
+                                        <p>
+                                            Nenhum motorista cadastrado.
+                                        </p>
+
+                                        <span>
+                                            Cadastre o primeiro motorista usando o formulário acima.
+                                        </span>
+
+                                    </td>
+
+                                </tr>
+
+                            {% endfor %}
+
+                        </tbody>
+                    </table> 
+                </div> 
+            </section> <!-- VOLTAR --> 
+            <a href="{% url 'index' %}" class="botao-principal" >
+                <i class="fa-solid fa-house"></i> Página Principal </a> 
+        </main> <!-- RODAPÉ --> 
+        <footer> <p> &copy; 2026 Controle de Frota </p> 
+        </footer> 
+    </body> 
+</html>

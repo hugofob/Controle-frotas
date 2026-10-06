@@ -1,0 +1,204 @@
+@charset "UTF-8"; /* Informa caracteres existentes */
+
+/* Significa todos os elementos da tela */ 
+*{ padding: 0px; /* Remove os espaços internos */ 
+    margin: 0px; /* Remove os espaços externos */ 
+    box-sizing: border-box; /* Faz width e height incluírem conteúdo, borda e padding */
+ } 
+ 
+ /* Corpo do codigo */ 
+ html, body{ 
+    width: 100%; /* Ocupa 100% da largura da tela */ 
+    min-height: 100%; /* Ocupa no mínimo 100% da altura da tela */ 
+    overflow-x: hidden; /* Esconde somente o que ultrapassar a largura */ 
+
+} 
+
+body{ 
+    font-family: Arial, Helvetica, sans-serif; /* Estilo da letra */ 
+    background-color: #f2f2f2; /* Cor de fundo */ 
+    color: black; /* Cor da letra */ 
+} 
+
+/* Cabeçalho */ 
+header{ 
+    width: 100%; /* Ocupa 100% da largura da tela */ 
+    padding: 25px 20px; /* Espaço interno */ 
+    background: linear-gradient(135deg, #1769aa, #0d4f82);
+    color: white;
+    display: flex; /* Transforma em um flex-container */ 
+    flex-direction: column; /* Organiza os elementos na vertical */ 
+    align-items: center; /* Centraliza os elementos */ 
+    justify-content: center; /* Centraliza os elementos */ 
+} 
+
+/* Título principal */ 
+header > h1{ 
+    color: white; /* Cor da letra */ 
+    text-align: center; /* Centraliza o texto */ 
+    margin-bottom: 10px; /* Cria espaço abaixo do título */ 
+} 
+
+/* Conteúdo principal */ 
+main{ 
+    width: 100%; /* Ocupa 100% da largura da tela */ 
+    max-width: 1200px; /* Define uma largura máxima */ 
+    margin: auto; /* Centraliza o conteúdo */ 
+    padding: 30px 20px; /* Espaço interno */ 
+} 
+
+/* Título da área de serviços */ 
+main > h2{ 
+    text-align: center; /* Centraliza o texto */ 
+    color: #222; /* Cor da letra */ 
+    margin-bottom: 10px; /* Cria espaço abaixo do título */ 
+} 
+
+/* Texto de explicação */ 
+.descricao{ 
+    text-align: center; /* Centraliza o texto */ 
+    color: #555; /* Cor da letra */ 
+    margin-bottom: 30px; /* Cria espaço abaixo do texto */ 
+} 
+
+/* Área das regiões */ 
+.regioes{ 
+    width: 100%; /* Ocupa 100% da largura disponível */ 
+    display: flex; /* Transforma em flex-container */ 
+    flex-direction: column; /* Organiza as regiões na vertical */ 
+    gap: 15px; /* Espaçamento entre as regiões */ 
+} 
+
+/* Cada região */ 
+.regiao{ 
+    width: 100%; /* Ocupa 100% da largura disponível */ 
+    background-color: white; /* Cor de fundo */ 
+    border: 1px solid #cccccc; /* Cria uma borda */ 
+    border-radius: 5px; /* Deixa os cantos arredondados */ 
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.20); /* Cria uma sombra */ 
+    overflow: hidden; /* Esconde aquilo que ultrapassar os limites */ 
+} 
+
+
+/* Área dos serviços */ 
+.servicos{ 
+    width: 100%; /* Ocupa 100% da largura disponível */ 
+    padding: 20px; /* Espaço interno */ 
+    display: flex; /* Transforma em flex-container */ 
+    flex-flow: row wrap; /* Organiza os serviços em linha */ 
+    gap: 20px; /* Espaçamento entre os serviços */ 
+} 
+
+/* Cada serviço */ 
+.servico{ 
+    flex: 1; /* Divide o espaço disponível */ 
+    min-width: 250px; /* Define uma largura mínima */ 
+    padding: 20px; /* Espaço interno */ 
+    background-color: #f2f2f2; /* Cor de fundo */ 
+    border: 1px solid #cccccc; /* Cria uma borda */ 
+    border-radius: 5px; /* Deixa os cantos arredondados */ 
+} 
+
+/* Título do serviço */ 
+.servico h4{ 
+    color: #222; /* Cor da letra */ 
+    margin-bottom: 10px; /* Cria espaço abaixo do título */ 
+    font-size: 18px; /* Tamanho da letra */ 
+} 
+
+/* Texto do serviço */ 
+.servico p{ 
+    color: #444; /* Cor da letra */ 
+    line-height: 1.5; /* Espaçamento entre as linhas */ 
+    margin-bottom: 15px; /* Cria espaço abaixo do texto */ 
+} 
+
+/* Botões dos serviços */ 
+.servico a{ 
+    display: inline-block; /* Permite aplicar espaçamento */ 
+    background: linear-gradient(135deg, #1769aa, #0d4f82); /* Cor de fundo  */
+    color: white; /* Cor da letra */
+    padding: 10px 15px; /* Espaço interno */ 
+    border-radius: 5px; /* Arredonda os cantos */ 
+    text-decoration: none; /* Remove o sublinhado */ 
+    text-align: center; /* Centraliza o texto */ 
+    transition: 0.3s; /* Tempo da animação */ 
+} 
+
+/* Quando passar o mouse no botão */ 
+.servico a:hover{ 
+    background-color: white; /* Muda a cor de fundo */ 
+    color: rgb(245, 239, 239); /* Muda a cor da letra */ 
+    border: 1px solid black; /* Cria uma borda */ 
+} 
+
+/* Botão para voltar */ 
+.voltar{ 
+    width: 100%; /* Ocupa 100% da largura */ 
+    display: flex; /* Transforma em flex-container */ 
+    justify-content: center; /* Centraliza o botão */ 
+    margin-top: 30px; /* Cria espaço acima do botão */ 
+} 
+
+/* Link do botão voltar */ 
+.voltar a{ 
+    background-color: rgba(0, 0, 0, 0.482); /* Cor de fundo */ 
+    color: white; /* Cor da letra */ 
+    padding: 12px 20px; /* Espaço interno */ 
+    border-radius: 5px; /* Arredonda os cantos */ 
+    text-decoration: none; /* Remove o sublinhado */ 
+    text-align: center; /* Centraliza o texto */ 
+    transition: 0.3s; /* Tempo da animação */ 
+} 
+
+/* Quando passar o mouse no botão voltar */ 
+.voltar a:hover{ 
+    background-color: white; /* Muda a cor de fundo */ 
+    color: black; /* Muda a cor da letra */ 
+    border: 1px solid black; /* Cria uma borda */ 
+} 
+
+/* ========================================= BOTÃO VOLTAR ========================================= */ 
+.botao-principal{ 
+    display: flex; /* Cria um flex-container */ 
+    align-items: center; /* Centraliza verticalmente */ 
+    justify-content: center; /* Centraliza horizontalmente */ 
+    gap: 10px; /* Espaço entre ícone e texto */ 
+    width: fit-content; /* Ocupa somente o espaço necessário */ 
+    margin: 40px 0px 20px 20px; /* Coloca o botão à esquerda */ 
+    padding: 14px 28px; /* Espaço interno */ 
+    background: linear-gradient(135deg, #1769aa, #0d4f82); /* Fundo degradê */ 
+    color: white; /* Cor da letra */ 
+    border-radius: 10px; /* Cantos arredondados */ 
+    text-decoration: none; /* Remove o sublinhado */ 
+    font-size: 16px; /* Tamanho da letra */ 
+    font-weight: bold; /* Letra em negrito */ 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Cria sombra */ 
+    transition: 0.3s; /* Suaviza a animação */ 
+} 
+/* Quando passar o mouse */ 
+.botao-principal:hover{ 
+    transform: translateY(-4px); /* Faz o botão subir */ 
+    background: linear-gradient(135deg, #0d4f82, #1769aa); /* Inverte o degradê */ box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Aumenta a sombra */ 
+} 
+
+/* Ícone do botão */ 
+.botao-principal i{ 
+    font-size: 18px; /* Tamanho do ícone */ 
+} 
+
+/* ================================ TELA DE CELULAR ================================ */ /* Quando a tela possuir até 600px */ 
+
+@media screen and (max-width: 600px){ 
+    /* Área dos serviços */ 
+    .servicos{ flex-direction: column; /* Coloca os serviços um abaixo do outro */ } /* Cada serviço */ 
+    .servico{ width: 100%; /* Ocupa toda a largura */ } 
+    /* Título principal */ 
+    header > h1{ 
+        font-size: 25px; /* Diminui o tamanho da letra */ 
+    } 
+    /* Título da área */ 
+    main > h2{ 
+        font-size: 22px; /* Diminui o tamanho da letra */ 
+    } 
+}

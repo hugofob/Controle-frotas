@@ -1,0 +1,95 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head>
+        {% load static %}
+
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Arquivo CSS --> 
+        <link rel="stylesheet" href="{% static 'css/stilos.css' %}"> <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/412e60f1e0.js" crossorigin="anonymous"></script> 
+        <title>Sobre o Sistema</title> 
+    </head> 
+    <body> 
+        <!-- Título principal --> 
+        <h1>CONHEÇA NOSSAS PRINCIPAIS FUNCIONALIDADES</h1> 
+        <!-- Subtítulo --> <h2> “Mais do que controlar veículos, o sistema busca ajudar a empresa a manter sua frota sempre pronta para rodar.” </h2> 
+         
+        <!-- ========================================= SEÇÃO SOBRE ========================================= --> 
+        
+        <section class="sobre"> 
+            
+            <!-- ========================================= INTRODUÇÃO ========================================= --> 
+            
+            <div class="introducao"> 
+                <div class="sobre-texto"> 
+                    <span class="subtitulo">SOBRE O SISTEMA</span> 
+                    <h2>Gestão inteligente para sua frota</h2> 
+                    
+                    <p> O Controle de Frota Empresarial é uma plataforma criada para ajudar empresas a organizar, acompanhar e cuidar de seus veículos de forma simples, rápida e eficiente. </p> 
+                    
+                    <p> A proposta é centralizar informações importantes da frota em um único lugar, facilitando o controle de veículos, motoristas, manutenção, abastecimento e serviços. </p> 
+                </div>
+                 <!-- Imagem da frota --> 
+                  <div class="sobre-imagem"> 
+                    <img src="{% static 'img/frota.jpg' %}" alt="Frota de veículos empresariais">
+                </div> 
+            </div> 
+            
+            <!-- ========================================= SERVIÇOS ========================================= --> 
+            
+            <div class="servicos"> <!-- Título dos serviços --> 
+                <div class="titulo-servicos"> 
+                    <span class="subtitulo">NOSSOS RECURSOS</span> 
+                    <h2>Tudo para cuidar da sua frota</h2> 
+                    <p> Tenha as principais informações e serviços organizados em um único ambiente. </p> 
+                </div> 
+                
+                <!-- ========================================= CARD MANUTENÇÃO ========================================= --> 
+                
+                <div class="card-servico"> 
+                    <i class="fa-solid fa-screwdriver-wrench"></i> <h3>Manutenção 🔧</h3> 
+                    <a href="{% url 'manutencao' %}"> Acessar manutenção </a>
+                    <p> Controle revisões, troca de óleo, pneus, freios e manutenções preventivas e corretivas. </p> 
+                </div> 
+                
+                <!-- ========================================= CARD POSTOS ========================================= --> 
+                
+                <div class="card-servico"> 
+                    <i class="fa-solid fa-gas-pump"></i> 
+                    <h3>Postos credenciados ⛽</h3> 
+                    <a href="{% url 'postos' %}"> Acessar postos </a>
+                    <p> Organize os abastecimentos e encontre postos credenciados para atender sua frota. </p> 
+                </div> 
+                
+                <!-- ========================================= CARD BORRACHARIA ========================================= --> 
+                
+                <div class="card-servico"> 
+                    <i class="fa-solid fa-car-burst"></i> 
+                    <h3>Borracharia 🛞</h3> 
+                    <a href="{% url 'borracharia' %}"> Acessar borracharia </a>
+                    <p> Tenha acesso a serviços de borracharia para situações de emergência e manutenção dos pneus. </p> 
+                </div> 
+                
+                <!-- ========================================= CARD OFICINAS ========================================= --> 
+                
+                <div class="card-servico"> 
+                    <i class="fa-solid fa-location-dot"></i> 
+                    <h3>Oficinas credenciadas 🏭</h3> <a href="{% url 'oficinas' %}"> Acessar oficinas </a>
+                    <p> Encontre oficinas e estabelecimentos parceiros para realizar serviços nos veículos. </p> 
+                </div> 
+            </div> 
+            
+            <!-- ========================================= PARTE FINAL ========================================= --> 
+             
+            <div class="sobre-final"> 
+                <h2>Mais controle. Menos preocupação.</h2> 
+                <p> Nossa proposta é ajudar empresas a manter seus veículos sempre preparados para trabalhar. </p> 
+            </div> 
+            
+            <!-- ========================================= BOTÃO VOLTAR ========================================= --> 
+             
+            <a href="{% url 'index' %}" class="botao-principal">
+                <i class="fa-solid fa-house"></i> Página Principal </a> 
+        </section> 
+    </body> 
+</html>

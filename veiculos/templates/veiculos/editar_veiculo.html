@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+
+      {% load static %}
+
+      <meta charset="UTF-8">
+
+      <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
+      <title>Editar Veículo | Controle de Frota</title>
+
+      <link rel="stylesheet"
+            href="{% static 'veiculos/css/veiculos.css' %}">
+
+      <script src="https://kit.fontawesome.com/412e60f1c7.js"
+              crossorigin="anonymous">
+      </script>
+
+  </head>
+
+  <body>
+
+    <header class="cabecalho">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-truck"></i>
+
+            <span>Controle de Frota</span>
+
+        </div>
+
+    </header>
+
+
+    <main class="conteudo">
+
+        <section class="titulo">
+
+            <h1>
+                <i class="fa-solid fa-pen"></i>
+                Editar Veículo
+            </h1>
+
+            <p>
+                Altere os dados do veículo cadastrado.
+            </p>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>
+                <i class="fa-solid fa-car"></i>
+                Dados do veículo
+            </h2>
+
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <div class="campo">
+
+                    <label for="placa">
+                        Placa
+                    </label>
+
+                    <input
+                        type="text"
+                        id="placa"
+                        name="placa"
+                        value="{{ veiculo.placa }}"
+                        maxlength="7"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="ano">
+                        Ano
+                    </label>
+
+                    <input
+                        type="number"
+                        id="ano"
+                        name="ano"
+                        value="{{ veiculo.ano }}"
+                        min="1900"
+                        max="2100"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="cor">
+                        Cor
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cor"
+                        name="cor"
+                        value="{{ veiculo.cor }}"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="categoria">
+                        Categoria
+                    </label>
+
+                    <select
+                        id="categoria"
+                        name="categoria"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione uma categoria
+                        </option>
+
+                        <option value="carro"
+                            {% if veiculo.categoria == "carro" %}selected{% endif %}>
+                            Carro
+                        </option>
+
+                        <option value="van"
+                            {% if veiculo.categoria == "van" %}selected{% endif %}>
+                            Van
+                        </option>
+
+                        <option value="micro-onibus"
+                            {% if veiculo.categoria == "micro-onibus" %}selected{% endif %}>
+                            Micro-ônibus
+                        </option>
+
+                        <option value="onibus"
+                            {% if veiculo.categoria == "onibus" %}selected{% endif %}>
+                            Ônibus
+                        </option>
+
+                        <option value="caminhao"
+                            {% if veiculo.categoria == "caminhao" %}selected{% endif %}>
+                            Caminhão
+                        </option>
+
+                        <option value="utilitario"
+                            {% if veiculo.categoria == "utilitario" %}selected{% endif %}>
+                            Utilitário
+                        </option>
+
+                        <option value="outro"
+                            {% if veiculo.categoria == "outro" %}selected{% endif %}>
+                            Outro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="botao-cadastrar">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Salvar alterações
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <a href="{% url 'lista_veiculos' %}"
+           class="botao-principal">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Voltar para veículos
+
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 Controle de Frota
+        </p>
+
+    </footer>
+
+  </body>
+
+</html>

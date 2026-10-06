@@ -1,0 +1,204 @@
+@charset "UTF-8"; /* Informa caracteres existentes */ 
+
+/* ========================================= TODOS OS ELEMENTOS DA TELA ========================================= */ 
+
+/* Significa todos os elementos da tela */ 
+*{ padding: 0px; /* Remove os espaços internos */ 
+    margin: 0px; /* Remove os espaços externos */ 
+    box-sizing: border-box; /* Faz width e height incluírem conteúdo, borda e padding */ 
+} 
+
+/* ========================================= CORPO DO CÓDIGO ========================================= */ 
+/* Corpo do codigo */ 
+html, body{ 
+    width: 100%; /* Ocupa 100% da largura da tela */ 
+    min-height: 100%; /* Ocupa no mínimo 100% da altura da tela */ 
+    overflow-x: hidden; /* Esconde somente o que ultrapassar a largura */ 
+} 
+
+body{ 
+    font-family: Arial, Helvetica, sans-serif; /* Estilo da letra */ 
+    background-color: #f2f2f2; /* Cor de fundo */ 
+    color: black; /* Cor da letra */ 
+} 
+
+/* ========================================= CABEÇALHO ========================================= */ 
+header{ 
+    width: 100%; /* Ocupa 100% da largura da tela */ 
+    padding: 25px 20px; /* Espaço interno */ 
+    background: linear-gradient(135deg, #1769aa, #0d4f82); /* Fundo degradê */ 
+    color: white; /* Cor da letra */ 
+    display: flex; /* Cria um flex-container */ 
+    flex-direction: column; /* Organiza os elementos verticalmente */ 
+    align-items: center; /* Centraliza os elementos */ 
+    justify-content: center; /* Centraliza os elementos */ 
+} 
+
+/* Título principal */ 
+header > h1{ 
+    color: white; /* Cor da letra */ 
+    text-align: center; /* Texto centralizado */ 
+    margin-bottom: 10px; /* Espaço abaixo do título */ 
+} 
+
+/* ========================================= CONTEÚDO PRINCIPAL ========================================= */ 
+main{ 
+    width: 100%; /* Ocupa 100% da largura */ 
+    max-width: 1200px; /* Limita o tamanho máximo */ 
+    margin: auto; /* Centraliza o conteúdo */ 
+    padding: 30px 20px; /* Espaço interno */ 
+} 
+
+/* Título da área */ 
+main > h2{ 
+    text-align: center; /* Texto centralizado */ 
+    color: #222; /* Cor da letra */ 
+    margin-bottom: 10px; /* Espaço abaixo do título */ 
+} 
+
+/* Texto de descrição */ 
+.descricao{ 
+    text-align: center; /* Texto centralizado */ 
+    color: #555; /* Cor da letra */ 
+    margin-bottom: 30px; /* Espaço abaixo */ 
+} 
+
+/* ========================================= ÁREA DAS REGIÕES ========================================= */ 
+.regioes{ 
+    width: 100%; /* Ocupa 100% da largura */ 
+    display: flex; /* Cria um flex-container */ 
+    flex-direction: column; /* Organiza os elementos em coluna */ 
+    gap: 15px; /* Espaço entre as regiões */ 
+} 
+
+/* ========================================= CARD DA REGIÃO ========================================= */ 
+.regiao{ 
+    width: 100%; /* Ocupa 100% da largura */ 
+    background-color: white; /* Cor de fundo */ 
+    border: 1px solid #cccccc; /* Cria uma borda */ 
+    border-radius: 5px; /* Deixa os cantos arredondados */ 
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.20); /* Cria uma sombra */ 
+    overflow: hidden; /* Esconde o que ultrapassar os limites */ 
+} 
+
+/* ========================================= BOTÃO DA REGIÃO ========================================= */ 
+.regiao summary{ 
+    padding: 18px 20px; /* Espaço interno */ 
+    background-color: rgba(0, 0, 0, 0.482); /* Cor de fundo */ 
+    color: white; /* Cor da letra */ 
+    font-size: 20px; /* Tamanho da letra */ 
+    font-weight: bold; /* Deixa a letra em negrito */ 
+    cursor: pointer; /* Muda o cursor do mouse */ 
+    list-style: none; /* Remove o marcador padrão */ 
+    transition: 0.3s; /* Suaviza a mudança */ 
+} 
+
+/* Quando passar o mouse na região */ 
+.regiao summary:hover{ 
+    background-color: white; /* Muda a cor de fundo */ 
+    color: black; /* Muda a cor da letra */ 
+} 
+
+/* Região quando estiver aberta */ 
+.regiao[open] summary{ 
+    background-color: #222222f6; /* Cor de fundo */ 
+    color: white; /* Cor da letra */ 
+} 
+
+/* ========================================= ÁREA DOS SERVIÇOS ========================================= */ 
+.servicos{ 
+    width: 100%; /* Ocupa 100% da largura */ 
+    padding: 20px; /* Espaço interno */ 
+    display: flex; /* Cria um flex-container */ 
+    flex-flow: row wrap; /* Organiza os elementos em linha */ 
+    gap: 20px; /* Espaço entre os elementos */ 
+} 
+
+/* ========================================= CARD DO POSTO ========================================= */ 
+.servico{ 
+    flex: 1; /* Permite o card ocupar o espaço disponível */ 
+    min-width: 250px; /* Define uma largura mínima */ 
+    padding: 20px; /* Espaço interno */ 
+    background-color: #f2f2f2; /* Cor de fundo */ 
+    border: 1px solid #cccccc; /* Cria uma borda */ 
+    border-radius: 5px; /* Deixa os cantos arredondados */ 
+} 
+
+/* Título do serviço */ 
+.servico h4{ 
+    color: #222; /* Cor da letra */ 
+    margin-bottom: 10px; /* Espaço abaixo */ 
+    font-size: 18px; /* Tamanho da letra */ 
+} 
+
+/* Texto do serviço */ 
+.servico p{ 
+    color: #444; /* Cor da letra */ 
+    line-height: 1.5; /* Espaçamento entre as linhas */ 
+    margin-bottom: 15px; /* Espaço abaixo */ 
+} 
+
+/* ========================================= BOTÃO ENCONTRAR POSTO ========================================= */ 
+.servico a{ 
+    display: inline-block; /* Permite aplicar tamanho e espaçamento */ 
+    background: linear-gradient(135deg, #1769aa, #0d4f82); /* Fundo degradê */ 
+    color: white; /* Cor da letra */  
+    padding: 10px 15px; /* Espaço interno */ 
+    border-radius: 5px; /* Deixa os cantos arredondados */ 
+    text-decoration: none; /* Remove o sublinhado */ 
+    text-align: center; /* Texto centralizado */ 
+    transition: 0.3s; /* Suaviza a animação */ 
+} 
+
+/* Quando passar o mouse no botão */ 
+.servico a:hover{ 
+    background-color: white; /* Muda a cor de fundo */ 
+    color: rgb(251, 249, 249); /* Muda a cor da letra */ 
+    border: 1px solid black; /* Adiciona uma borda */ 
+} 
+
+/* ========================================= BOTÃO VOLTAR ========================================= */ 
+.botao-principal{ 
+    display: flex; /* Cria um flex-container */ 
+    align-items: center; /* Centraliza verticalmente */ 
+    justify-content: center; /* Centraliza horizontalmente */ 
+    gap: 10px; /* Espaço entre ícone e texto */ 
+    width: fit-content; /* Ocupa somente o espaço necessário */ 
+    margin: 40px 0px 20px 20px; /* Coloca o botão à esquerda */ 
+    padding: 14px 28px; /* Espaço interno */ 
+    background: linear-gradient(135deg, #1769aa, #0d4f82); /* Fundo degradê */ 
+    color: white; /* Cor da letra */ 
+    border-radius: 10px; /* Cantos arredondados */ 
+    text-decoration: none; /* Remove o sublinhado */ 
+    font-size: 16px; /* Tamanho da letra */ 
+    font-weight: bold; /* Letra em negrito */ 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Cria sombra */ 
+    transition: 0.3s; /* Suaviza a animação */ 
+} 
+/* Quando passar o mouse */ 
+.botao-principal:hover{ 
+    transform: translateY(-4px); /* Faz o botão subir */ 
+    background: linear-gradient(135deg, #0d4f82, #1769aa); /* Inverte o degradê */ box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Aumenta a sombra */ 
+} 
+
+/* Ícone do botão */ 
+.botao-principal i{ 
+    font-size: 18px; /* Tamanho do ícone */ 
+} 
+
+
+/* ========================================= TELA DE CELULAR ========================================= */ 
+@media screen and (max-width: 600px){ 
+    .servicos{ 
+        flex-direction: column; /* Organiza os cards em coluna */ 
+    } 
+    .servico{
+        width: 100%; /* Ocupa toda a largura */ 
+    } 
+    header > h1{ 
+        font-size: 25px; /* Diminui o tamanho do título */ 
+    } 
+    main > h2{ 
+        font-size: 22px; /* Diminui o tamanho do título */ 
+    }
+}

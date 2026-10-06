@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head>
+        {% load static %}
+
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Veículos | Controle de Frota</title> 
+        <link rel="stylesheet" href="{% static 'veiculos/css/veiculos.css' %}"> <!-- Font Awesome --> <script src="https://kit.fontawesome.com/412e60f1c7.js" crossorigin="anonymous">
+        </script> 
+    </head> 
+    <body> <!-- CABEÇALHO --> 
+        <header class="cabecalho"> 
+            <div class="logo"> 
+                <i class="fa-solid fa-truck"></i> <span>Controle de Frota</span> 
+            </div> 
+            
+        </header> <!-- CONTEÚDO PRINCIPAL --> 
+        <main class="conteudo"> 
+            <section class="titulo"> 
+                <h1> <i class="fa-solid fa-car"></i> Cadastro de Veículos </h1> 
+                <p> Cadastre e organize os veículos da sua frota. </p> 
+            </section> <!-- FORMULÁRIO --> 
+            
+            <section class="card"> 
+                <h2> <i class="fa-solid fa-plus"></i> Novo veículo </h2> 
+                <form method="POST">
+
+                    {% csrf_token %}
+                    <div class="campo"> 
+                        <label for="placa"> Placa </label> 
+                        <input type="text" id="placa" name="placa" placeholder="Ex: ABC1D23" maxlength="7" required > 
+                    </div> 
+                    
+                    <div class="campo"> 
+                        <label for="ano"> Ano </label> 
+                        <input type="number" id="ano" name="ano" placeholder="Ex: 2024" min="1900" max="2100" required > 
+                    </div> 
+                    
+                    <div class="campo"> 
+                        <label for="cor"> Cor </label> 
+                        <input type="text" id="cor" name="cor" placeholder="Ex: Branco" required > 
+                    </div> 
+                    
+                    <div class="campo"> 
+                        <label for="categoria"> Categoria </label> 
+                        <select id="categoria" name="categoria" required >
+                             <option value=""> Selecione uma categoria </option> <option value="carro"> Carro </option> 
+                             <option value="van"> Van </option> 
+                             <option value="micro-onibus"> Micro-ônibus </option> 
+                             <option value="onibus"> Ônibus </option> 
+                             <option value="caminhao"> Caminhão </option>
+                            <option value="utilitario"> Utilitário </option>
+                            <option value="outro"> Outro </option> 
+                        </select> 
+                    </div> 
+                    <button type="submit" class="botao-cadastrar" > 
+                        <i class="fa-solid fa-plus"></i> Cadastrar veículo 
+                    </button> 
+                </form> 
+            </section> <!-- LISTA DE VEÍCULOS --> 
+            <section class="card"> 
+                <div class="titulo-lista"> 
+                    <div> 
+                        <h2> <i class="fa-solid fa-list"></i> Veículos          cadastrados 
+                        </h2> 
+                        <p> Consulte os veículos registrados na frota. </p> 
+                    </div> 
+                    <span class="contador">
+                        {{ veiculos|length }} veiculos
+                    </span>
+                </div> 
+                <div class="tabela-container"> 
+                    <table> 
+                        <thead> 
+                            <tr> 
+                                <th>Placa</th> 
+                                <th>Ano</th> 
+                                <th>Cor</th> 
+                                <th>Categoria</th> 
+                                <th>Ações</th> 
+                            </tr> 
+                        </thead> 
+                        <tbody> 
+                            {% for veiculo in veiculos %}
+
+                            <tr>
+
+                                <td>{{ veiculo.placa }}</td>
+
+                                <td>{{ veiculo.ano }}</td>
+
+                                <td>{{ veiculo.cor }}</td>
+
+                                <td>{{ veiculo.categoria }}</td>
+
+                                <td>
+                                        <a href="{% url 'editar_veiculo' veiculo.id %}" class="botao-editar" title="Editar veiculo">
+                                            ✏️
+                                        </a>
+
+                                        <a href="{% url 'excluir_veiculo' veiculo.id %}" class="botao-excluir" title="Excluir veiculo">
+                                            <i class="fa-solid fa-trash"></i>
+                                            🗑️
+                                        </a>
+
+                                </td>
+
+                            </tr>
+
+                            {% empty %}
+
+                            <tr class="sem-veiculos">
+
+                                <td colspan="5">
+
+                                    <i class="fa-solid fa-car-side"></i>
+
+                                    <p>Nenhum veículo cadastrado.</p>
+
+                                    <span>
+                                        Cadastre o primeiro veículo usando o formulário acima.
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                            {% endfor %}
+
+                        </tbody> 
+                    </table> 
+                </div> 
+            </section> 
+            <!-- BOTÃO VOLTAR --> 
+             <a href="{% url 'index' %}" class="botao-principal" > <i class="fa-solid fa-house"></i> Página Principal </a>
+        </main> 
+            <footer> 
+                <p> &copy; 2026 Controle de Frota </p> 
+            </footer> 
+        </body> 
+</html>

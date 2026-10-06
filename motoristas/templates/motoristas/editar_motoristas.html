@@ -1,0 +1,276 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Editar Motorista | Controle de Frota</title>
+
+    <!-- CSS da página -->
+    <link rel="stylesheet" href="{% static 'motoristas/css/motoristas.css' %}">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/412e60f1c7.js"
+            crossorigin="anonymous">
+    </script>
+
+</head>
+
+<body>
+
+    <!-- ========================= CABEÇALHO ========================= -->
+
+    <header class="cabecalho">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-truck"></i>
+
+            <span>Controle de Frota</span>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================= CONTEÚDO ========================= -->
+
+    <main class="conteudo">
+
+        <!-- TÍTULO -->
+
+        <section class="titulo">
+
+            <h1>
+
+                <i class="fa-solid fa-user-pen"></i>
+
+                Editar motorista
+
+            </h1>
+
+            <p>
+                Altere os dados do motorista cadastrado.
+            </p>
+
+        </section>
+
+
+        <!-- ========================= FORMULÁRIO ========================= -->
+
+        <section class="card">
+
+            <h2>
+
+                <i class="fa-solid fa-user-pen"></i>
+
+                Dados do motorista
+
+            </h2>
+
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+
+                <!-- NOME -->
+
+                <div class="campo campo-completo">
+
+                    <label for="nome">
+                        Nome completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        value="{{ motorista.nome }}"
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ENDEREÇO -->
+
+                <div class="campo campo-completo">
+
+                    <label for="endereco">
+                        Endereço
+                    </label>
+
+                    <input
+                        type="text"
+                        id="endereco"
+                        name="endereco"
+                        value="{{ motorista.endereco }}"
+                        maxlength="200"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CNH -->
+
+                <div class="campo">
+
+                    <label for="cnh">
+                        Carteira de habilitação (CNH)
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cnh"
+                        name="cnh"
+                        value="{{ motorista.cnh }}"
+                        maxlength="20"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CATEGORIA -->
+
+                <div class="campo">
+
+                    <label for="categoria">
+                        Categoria da CNH
+                    </label>
+
+                    <select
+                        id="categoria"
+                        name="categoria"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione a categoria
+                        </option>
+
+                        <option value="A"
+                            {% if motorista.categoria == "A" %}selected{% endif %}>
+                            A - Motocicletas
+                        </option>
+
+                        <option value="B"
+                            {% if motorista.categoria == "B" %}selected{% endif %}>
+                            B - Automóveis
+                        </option>
+
+                        <option value="C"
+                            {% if motorista.categoria == "C" %}selected{% endif %}>
+                            C - Caminhões
+                        </option>
+
+                        <option value="D"
+                            {% if motorista.categoria == "D" %}selected{% endif %}>
+                            D - Ônibus e micro-ônibus
+                        </option>
+
+                        <option value="E"
+                            {% if motorista.categoria == "E" %}selected{% endif %}>
+                            E - Veículos articulados
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TELEFONE -->
+
+                <div class="campo">
+
+                    <label for="telefone">
+                        Telefone
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        value="{{ motorista.telefone }}"
+                        maxlength="20"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="campo">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value="{{ motorista.email }}"
+                        maxlength="100"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- BOTÃO SALVAR -->
+
+                <button
+                    type="submit"
+                    class="botao-cadastrar"
+                >
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Salvar alterações
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- BOTÃO VOLTAR -->
+
+        <a
+            href="{% url 'motoristas' %}"
+            class="botao-principal"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Voltar para motoristas
+
+        </a>
+
+    </main>
+
+
+    <!-- ========================= RODAPÉ ========================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Controle de Frota
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

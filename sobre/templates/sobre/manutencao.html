@@ -1,0 +1,31 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+    <head> <meta charset="UTF-8">
+        {% load static %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- Arquivo CSS --> 
+         <link rel="stylesheet" href="{% static 'css/manutencao.css' %}">
+         <title>Manutenção</title> 
+        </head> 
+        <body> 
+            <!-- Cabeçalho da página --> 
+             <header> 
+                <!-- Título principal --> 
+                 <h1>Serviços Credenciados</h1> 
+            </header> 
+                <!-- Conteúdo principal --> 
+                 <main> 
+                    <!-- Título da área de serviços --> 
+                     <h2>Encontre um serviço para sua frota</h2>
+                        <!-- Serviço de guincho --> 
+                        <div class="servico"> 
+                            <h4>🚛 Guincho 24 horas</h4> 
+                            <p> Encontre serviços de guincho 24 horas próximos da sua localização. </p> 
+                            <a href="https://www.google.com/maps/search/guincho+24+horas" target="_blank" rel="noopener noreferrer"> 📍 Encontrar guincho </a> 
+                        </div> 
+                
+                 <a href="{% url 'sobre' %}" class="botao-principal"> <i class="fa-solid fa-house"></i> Página Anterior </a>
+                </main>  
+        </body> 
+</html>

@@ -1,0 +1,337 @@
+@charset "UTF-8"; /* Informa que o arquivo utiliza caracteres especiais */ 
+
+/* Significa todos os elementos da tela */ 
+*{ 
+    padding: 0px; /* Remove os espaços internos */ 
+    margin: 0px; /* Remove os espaços externos */ 
+    box-sizing: border-box; /* Faz width e height incluírem conteúdo, padding e borda */ 
+} 
+
+/* Corpo do codigo */ 
+html, body{ 
+    width: 100%; /* Ocupa 100% da largura da tela */ 
+    min-height: 100%; /* Ocupa no mínimo 100% da altura da tela */ 
+} 
+
+/* Configurações gerais do corpo */ 
+body{ 
+    font-family: Arial, Helvetica, sans-serif; /* Define o tipo de letra */ 
+    background-color: #f4f6f8; /* Define a cor de fundo */ 
+    color: #222; /* Define a cor padrão dos textos */ 
+} 
+
+/* ========================================= TÍTULO PRINCIPAL ========================================= */ 
+body > h1{ 
+    text-align: center; /* Centraliza o título */ 
+    font-size: 36px; /* Define o tamanho da letra */ 
+    color: #1769aa; /* Define a cor azul do título */ 
+    padding: 50px 20px 15px; /* Cria espaço interno em cima, lados e embaixo */ 
+} 
+
+/* ========================================= SUBTÍTULO PRINCIPAL ========================================= */ 
+body > h2{ 
+    text-align: center; /* Centraliza o texto */ 
+    max-width: 900px; /* Limita a largura máxima do texto */ 
+    margin: auto; /* Centraliza o elemento */ 
+    padding: 0px 20px 40px; /* Cria espaço interno */ 
+    font-size: 18px; /* Define o tamanho da letra */ 
+    line-height: 1.6; /* Define o espaçamento entre as linhas */ 
+    font-weight: normal; /* Retira o negrito */ 
+    color: #666; /* Define a cor cinza */ 
+} 
+
+/* ========================================= PÁGINA SOBRE ========================================= */ 
+.sobre{ 
+    width: 100%; /* Ocupa toda a largura disponível */ 
+    background-color: #f4f6f8; /* Define a cor de fundo */ 
+    color: #222; /* Define a cor dos textos */ 
+    padding-bottom: 60px; /* Cria espaço na parte inferior */ 
+} 
+
+/* ========================================= INTRODUÇÃO ========================================= */ 
+.introducao{ 
+    width: 100%; /* Ocupa toda a largura disponível */ 
+    max-width: 1200px; /* Limita a largura máxima */ 
+    margin: auto; /* Centraliza a seção */ 
+    padding: 50px 30px; /* Cria espaço interno */ 
+    display: flex; /* Coloca texto e imagem lado a lado */ 
+    align-items: center; /* Centraliza os elementos verticalmente */ 
+    justify-content: space-between; /* Distribui os elementos */ 
+    gap: 50px; /* Cria espaço entre texto e imagem */ 
+} 
+
+/* ========================================= TEXTO ========================================= */ 
+.sobre-texto{ 
+    flex: 1; /* Permite que o texto ocupe o espaço disponível */ 
+} 
+
+/* Subtítulo */ 
+.subtitulo{ 
+    display: inline-block; /* Permite aplicar tamanho e espaçamento */ 
+    font-size: 14px; /* Define o tamanho da letra */ 
+    font-weight: bold; /* Deixa o texto em negrito */ 
+    letter-spacing: 3px; /* Aumenta o espaço entre as letras */ 
+    color: #1769aa; /* Define a cor azul */ 
+    margin-bottom: 15px; /* Cria espaço abaixo */ 
+} 
+
+/* Título da introdução */ 
+.sobre-texto h2{ 
+    font-size: 42px; /* Define o tamanho do título */ 
+    line-height: 1.1; /* Define o espaçamento das linhas */ 
+    margin-bottom: 25px; /* Cria espaço abaixo do título */ 
+    color: #1b1b1b; /* Define a cor do título */ 
+} 
+
+/* Parágrafos */ 
+.sobre-texto p{ 
+    font-size: 17px; /* Define o tamanho da letra */ 
+    line-height: 1.7; /* Define o espaçamento entre as linhas */ 
+    margin-bottom: 18px; /* Cria espaço entre os parágrafos */ 
+    color: #555; /* Define a cor cinza */ 
+} 
+
+/* ========================================= IMAGEM ========================================= */ 
+.sobre-imagem{ 
+    flex: 1; /* Permite que a imagem ocupe o espaço disponível */ 
+    position: relative; /* Permite posicionar elementos dentro */ 
+} 
+
+/* Imagem da frota */ 
+.sobre-imagem img{ 
+    width: 100%; /* Ocupa toda a largura disponível */ 
+    max-width: 550px; /* Limita o tamanho máximo */ 
+    height: 360px; /* Define a altura da imagem */ 
+    object-fit: cover; /* Faz a imagem preencher o espaço sem deformar */ 
+    border-radius: 20px; /* Arredonda os cantos */ 
+    display: block; /* Faz a imagem se comportar como bloco */ 
+    margin: auto; /* Centraliza a imagem */ 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Cria sombra */ 
+    transition: 0.4s; /* Cria uma transição suave */ 
+} 
+
+/* Efeito quando passar o mouse na imagem */ 
+.sobre-imagem img:hover{ 
+    transform: scale(1.02); /* Aumenta levemente a imagem */ 
+} 
+
+/* ========================================= SERVIÇOS ========================================= */ 
+.servicos{ 
+    max-width: 1200px; /* Limita a largura máxima */ 
+    margin: auto; /* Centraliza a seção */ 
+    padding: 60px 30px; /* Cria espaço interno */ 
+    display: grid; /* Cria uma grade para os cards */ 
+    grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas */ 
+    gap: 25px; /* Cria espaço entre os cards */ 
+} 
+
+/* ========================================= TÍTULO DOS SERVIÇOS ========================================= */ 
+.titulo-servicos{ 
+    text-align: center; /* Centraliza o conteúdo */ 
+    margin-bottom: 20px; /* Cria espaço abaixo */ 
+    grid-column: 1 / -1; /* Faz o título ocupar as duas colunas */ 
+} 
+
+/* Título */ 
+.titulo-servicos h2{ 
+    font-size: 36px; /* Define o tamanho da letra */ 
+    margin: 10px 0px 15px; /* Cria espaço acima e abaixo */ 
+    color: #222; /* Define a cor */ 
+} 
+
+/* Texto */ 
+.titulo-servicos p{ 
+    max-width: 650px; /* Limita a largura do texto */ 
+    margin: auto; /* Centraliza o texto */ 
+    font-size: 16px; /* Define o tamanho da letra */ 
+    line-height: 1.6; /* Define o espaçamento das linhas */ 
+    color: #666; /* Define a cor cinza */ 
+} 
+
+/* ========================================= CARDS ========================================= */ 
+.card-servico{ 
+    background-color: white; /* Define o fundo branco */ 
+    padding: 25px 20px; /* Cria espaço interno */ 
+    border-radius: 15px; /* Arredonda os cantos */ 
+    text-align: center; /* Centraliza o conteúdo */ 
+    border: 1px solid #e5e5e5; /* Cria uma borda */ 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06); /* Cria uma sombra suave */ 
+    transition: 0.3s; /* Cria uma animação suave */ 
+} 
+
+/* Efeito quando passar o mouse no card */ 
+.card-servico:hover{ 
+    transform: translateY(-8px); /* Faz o card subir */ 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.13); /* Aumenta a sombra */ 
+    border-color: #1769aa; /* Muda a cor da borda */ 
+} 
+
+/* ========================================= ÍCONES ========================================= */ 
+.card-servico i{ 
+    display: flex; /* Permite organizar o conteúdo */ 
+    align-items: center; /* Centraliza verticalmente */ 
+    justify-content: center; /* Centraliza horizontalmente */ 
+    width: 50px; /* Diminui a largura da caixa do ícone */ 
+    height: 50px; /* Diminui a altura da caixa do ícone */ 
+    margin: 0px auto 15px; /* Centraliza e cria espaço abaixo */ 
+    border-radius: 50%; /* Deixa a caixa redonda */ 
+    background-color: #e8f3fc; /* Define o fundo azul claro */ 
+    color: #1769aa; /* Define a cor do ícone */ 
+    font-size: 22px; /* Define o tamanho do ícone */ 
+    transition: 0.3s; /* Cria uma animação suave */ 
+} 
+
+/* Efeito no ícone quando passar o mouse no card */ 
+.card-servico:hover i{ 
+    background-color: #1769aa; /* Muda o fundo para azul */ 
+    color: white; /* Muda o ícone para branco */ 
+    transform: scale(1.1); /* Aumenta um pouco o ícone */ 
+} 
+
+/* ========================================= TÍTULO DOS CARDS ========================================= */ 
+.card-servico h3{ 
+    font-size: 20px; /* Define o tamanho do título */ 
+    margin-bottom: 10px; /* Cria espaço abaixo */ 
+    color: #222; /* Define a cor */ 
+} 
+
+/* ========================================= LINK DOS CARDS ========================================= */ 
+.card-servico a{ 
+    display: inline-block; /* Permite configurar o link */ 
+    margin-bottom: 12px; /* Cria espaço abaixo */ 
+    color: #1769aa; /* Define a cor azul */ 
+    text-decoration: none; /* Remove o sublinhado */ 
+    font-weight: bold; /* Deixa o texto em negrito */ 
+    transition: 0.3s; /* Cria uma transição suave */ 
+} 
+
+/* Efeito quando passar o mouse no link */ 
+.card-servico a:hover{ 
+    color: #0d4f82; /* Deixa o azul mais escuro */ 
+    text-decoration: underline; /* Coloca sublinhado */ 
+} 
+
+/* ========================================= TEXTO DOS CARDS ========================================= */ 
+.card-servico p{ 
+    font-size: 15px; /* Define o tamanho da letra */ 
+    line-height: 1.6; /* Define o espaçamento entre as linhas */ 
+    color: #666; /* Define a cor cinza */ 
+} 
+
+/* ========================================= FINAL DA PÁGINA ========================================= */ 
+.sobre-final{ 
+    max-width: 1100px; /* Limita a largura máxima */ 
+    margin: 40px auto 0; /* Centraliza e cria espaço acima */ 
+    padding: 60px 30px; /* Cria espaço interno */ 
+    text-align: center; /* Centraliza o conteúdo */ 
+    background-color: #1769aa; /* Define o fundo azul */ 
+    color: white; /* Define os textos como brancos */ 
+    border-radius: 20px; /* Arredonda os cantos */ 
+} 
+
+/* Título final */ 
+.sobre-final h2{ 
+    font-size: 32px; /* Define o tamanho do título */ 
+    margin-bottom: 15px; /* Cria espaço abaixo */ 
+} 
+
+/* Texto final */ 
+.sobre-final p{ 
+    font-size: 17px; /* Define o tamanho da letra */ 
+    opacity: 0.9; /* Deixa o texto um pouco transparente */ 
+} 
+
+/* ========================================= BOTÃO PÁGINA PRINCIPAL ========================================= */ 
+.botao-principal{ 
+    display: flex; /* Permite organizar o conteúdo */ 
+    align-items: center; /* Centraliza verticalmente */ 
+    justify-content: center; /* Centraliza horizontalmente */ 
+    gap: 10px; /* Cria espaço entre ícone e texto */ 
+    width: fit-content; /* Faz o botão ter o tamanho do conteúdo */ 
+    margin: 40px auto 20px; /* Centraliza o botão */ 
+    padding: 14px 28px; /* Cria espaço dentro do botão */ 
+    background: linear-gradient(135deg, #1769aa, #0d4f82); /* Cria gradiente azul */ color: white; /* Define a cor do texto */ 
+    border-radius: 10px; /* Arredonda os cantos */ 
+    text-decoration: none; /* Remove o sublinhado */ 
+    font-size: 16px; /* Define o tamanho do texto */ 
+    font-weight: bold; /* Deixa o texto em negrito */ 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Cria sombra */ 
+    transition: 0.3s; /* Cria animação */ 
+} 
+
+/* Efeito quando passar o mouse */ 
+.botao-principal:hover{ 
+    transform: translateY(-4px); /* Faz o botão subir */ 
+    background: linear-gradient(135deg, #0d4f82, #1769aa); /* Inverte o gradiente */ box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* Aumenta a sombra */ 
+} 
+
+/* Ícone do botão */ 
+.botao-principal i{ 
+    font-size: 18px; /* Define o tamanho do ícone */ 
+} 
+
+/* ========================================= TABLET ========================================= */ 
+@media (max-width: 900px){ 
+    .introducao{ 
+        flex-direction: column; /* Coloca imagem abaixo do texto */ 
+        text-align: center; /* Centraliza o texto */ 
+    } 
+    .sobre-imagem{ 
+        width: 100%; /* Ocupa toda a largura */ 
+    } 
+    .sobre-imagem img{ 
+        max-width: 100%; /* Permite ocupar toda a largura */ 
+    } 
+    .servicos{ 
+        grid-template-columns: repeat(2, 1fr); /* Mantém 2 cards por linha */ 
+    } 
+} 
+
+/* ========================================= CELULAR ========================================= */ 
+@media (max-width: 600px){ 
+    body > h1{ 
+        font-size: 28px; /* Diminui o título */ 
+        padding: 35px 20px 15px; /* Diminui o espaço */ 
+    } 
+    body > h2{ 
+        font-size: 16px; /* Diminui o subtítulo */ 
+        padding-bottom: 30px; /* Diminui o espaço inferior */ 
+    } 
+    .introducao{ 
+        padding: 50px 20px; /* Diminui o espaço da introdução */ 
+    } 
+    .sobre-texto h2{ 
+        font-size: 32px; /* Diminui o título */ 
+    } 
+    .sobre-texto p{ 
+        font-size: 16px; /* Diminui o texto */ 
+    } 
+    .sobre-imagem img{ 
+        height: 250px; /* Diminui a altura da imagem */ 
+    } 
+    .servicos{ 
+        padding: 40px 20px; /* Diminui o espaço da seção */ 
+        grid-template-columns: 1fr; /* Coloca apenas 1 card por linha */ 
+    } 
+    .titulo-servicos{ 
+        grid-column: 1; /* Faz o título ocupar uma coluna */ 
+    } 
+    .titulo-servicos h2{ 
+        font-size: 28px; /* Diminui o título */ 
+    } 
+    .card-servico{ 
+        padding: 25px 20px; /* Diminui o espaço dos cards */ 
+    } 
+    .card-servico i{ 
+        width: 48px; /* Deixa o ícone menor no celular */ 
+        height: 48px; /* Deixa a caixa menor */ 
+        font-size: 21px; /* Diminui o ícone */ 
+    } 
+    .sobre-final{ 
+        margin: 20px; /* Cria espaço nas laterais */ 
+        padding: 45px 20px; /* Diminui o espaço interno */ 
+    } 
+    .sobre-final h2{ 
+        font-size: 27px; /* Diminui o título */ 
+    } 
+}

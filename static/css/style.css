@@ -1,0 +1,163 @@
+@charset "UTF-8"; /* Informa caracteres existentes */
+
+/* Significa todos os elementos da tela */
+*{
+    padding: 0px; /* Remove os espaços internos */
+    margin: 0px; /* Remove os espaços externos */
+    box-sizing: border-box; /* Ela faz com que width height(altura e largura), incluam conteúdo borda padding... */
+}
+
+/* Corpo do codigo */
+html, body{
+    width: 100%;/*Ocupa 100% da largura da tela */
+    height: 100%;/*Ocupa 100% da altura da tela*/
+    overflow: hidden;/*Escondo os elementos que ultrapasse os limites de cada elemento */
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;/*Estilo da letra  */ 
+    background-color: #f2f2f2;/* Cor de fundo */
+    
+}
+
+header{
+    background-color: gray;/*Cor de fundo */
+    color: white;/*Cor da letra */
+    padding: 10px;/*10px de espaço interno  */
+
+    display: flex;/*Transforma os elementos em um flex-container onde orgarniza os elementos que estão dentro  */
+    flex-flow: row wrap;/*Organiza os elementos em uma linha  */
+    justify-content: space-between;/* Controla a distribuição dos elementos do eixo principal */
+    align-items: center;/*Centraliza os elementos no eixo transversal  */
+}
+
+/* Título de nível 1 */
+header > h1{
+    color: white; /* Cor da letra  */
+    margin-bottom: 25px;/*Cria 25px abaixo do título  */
+}
+
+header > nav{
+    border: 1px dotted black;/*Ela cria uma borda com espessura de 1px estilo pontilhado na cor preta  */
+    list-style: none; /* Remove os marcadores e bolinha na ul li elementos de lista */
+    justify-content: center; /* Serve para centralizar os elementos filhos de dentro do conteiner */
+    gap: 30px; /* Espaçamento de 30px dentro os elementos filhos no conteiner */
+
+    display: flex;/*Transforma os elementos em um flex-container onde orgarniza os elementos que estão dentro  */
+    flex-flow: row wrap;/*Organiza os elementos em uma linha  */
+    
+}
+
+#menu ul{
+    display: flex;/*Transforma os elementos em um flex-container onde orgarniza os elementos que estão dentro  */
+    align-items: center;/*Espaçamento de 30px dentro os elementos filhos no conteiner */
+    gap: 10px;/* Espaçamento de 30px dentro os elementos filhos no conteiner */
+    list-style: none;/* Remove os marcadores e bolinha na ul li elementos de lista */
+    padding: 0;/* Remove os espaços internos */
+    margin: 0;/* Remove os espaços externos */
+}
+
+#menu ul li a {
+    display: block; /* Ocupa toda largura dísponivel na tela a iniciar em uma nova linha.  */
+    background-color: rgba(0, 0, 0, 0.482); /* Cor de fundo */
+    color: white;/* Cor da letra */
+    padding: 10px;/* 10px espaço interno */
+    border-radius: 5px; /* Os cantos da borda mais suaves com 5px */
+    text-decoration: none;/* Remove sublinhado dos link */
+    text-align: center; /* Texto centralizado */
+    transition: 0.3s; /* 3 segundos de estilo ao passar o mouse */
+}
+
+#menu ul li a:hover { /* Estilo de quando passar o mouse mudando cor de fundo e a letra */
+    background-color: white;
+    color: black;
+}
+
+
+.banner { /* Classe chamada banner */
+    position: relative;/* Posicionamento relativo dos elementos filhos */
+    width: 100%;/*Ocupa 100% da largura da tela */
+    height: 93vh;/* Altura da janela do navegador */
+    overflow: hidden; /* Corta aquilo que ultrapasse os limites do banner */
+}
+
+.banner img {
+    width: 100%;/*Ocupa 100% da largura da tela */
+    height: 100%;/*Ocupa 100% da altura da tela */
+    object-fit: cover; /* Faz com que uma imagem ou video preencha todo espaço do conteiner */
+    object-position: center; /* Define que um elemento deve ficar na posição centralizado dentro do conteiner  */
+}
+
+.banner header {
+    position: absolute; /* Posiciona um elemento do fluxo normal da pagina e posiciona de acordo com anterior mais proximo a tela */
+    top: 0;/* Define uma distância de zero pixels a partir da borda superior  */
+    left: 0; /* Define uma distância de zero pixels a partir da borda esquerda  */
+    width: 100%;/*Ocupa 100% da largura da tela */
+    padding: 30px 20px;/* Define o espaçamento interno de um elemento, 30px aplica se aos lados superior(top) inferior(bottom), 20px aplica a esquerda(left) direita (right)  */
+    background-color: rgba(0, 0, 0, 0.45);/* Muda cor de fundo */
+    color: white;/* Muda cor da letra */
+    display: flex;/*Transforma os elementos em um elemento flexivel flex-container onde orgarniza os elementos que estão dentro  */
+    flex-direction: column; /* Os itens dentro de um conteiner flexivel serão organizados verticalmente   */
+    align-items: center;/* Texto centralizado */
+    justify-content: center;/* Serve para centralizar os elementos filhos de dentro do conteiner */
+}
+
+body.escuro .banner header {
+    background-color: #1f1f1f; /* Muda a cor do cabeçalho no tema escuro */
+}
+
+/* Botões do menu no tema escuro */
+body.escuro #menu ul li a {
+    background-color: white; /* Muda a cor de fundo dos botões */
+    color: rgba(0, 0, 0, 0.968); /* Muda a cor da letra */
+}
+
+body.escuro #menu ul li a:hover {
+    background-color: rgb(28, 27, 27); /* Muda cor de fundo */
+    color: rgb(241, 240, 240);  /* Muda cor da letra */ 
+}
+
+#botao-tema {
+    cursor: pointer; /* Muda o cursor do mouse */
+    font-size: 20px; /* Tamanho da fonte  */
+}
+
+footer { 
+    text-align: center; /* Texto centralizado */
+    padding: 20px; /* 20px de espaço interno */
+    background-color: #222222f6; /* Muda cor de fundo */
+    color: white; /* Muda cor da letra */ 
+}
+
+body.escuro footer{
+    background-color: rgb(245, 239, 239); /* Muda cor de fundo */
+    color: rgb(19, 19, 19); /* Muda cor da letra */
+}
+
+/* ========================================= TABLET ========================================= */
+@media (max-width: 900px){
+    .introducao{
+        flex-direction: column; /* Coloca imagem abaixo do texto */
+        text-align: center; /* Centraliza o texto */
+    }
+    .sobre-imagem{
+        width: 100%; /* Ocupa toda a largura */
+    }
+    .sobre-imagem img{
+        max-width: 100%; /* Permite ocupar toda a largura */
+    }
+    .servicos{
+        grid-template-columns: repeat(2, 1fr); /* Mantém 2 cards por linha */
+    }
+}
+
+/* ========================================= CELULAR ========================================= */
+@media (max-width: 600px){
+    body > h1{
+        font-size: 28px; /* Diminui o título */
+        padding: 35px 20px 15px; /* Diminui o espaço */
+    }
+    body > h2{
+        font-size: 16px; /* Diminui o subtítulo */
+        padding-bottom: 30px; /* Diminui o espaço inferior */
+    }

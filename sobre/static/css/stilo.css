@@ -1,0 +1,229 @@
+@charset "UTf-8";
+
+*{
+	padding: o;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px 20px;
+	background-color: #f4f6f8;
+    color: #222;
+	}
+
+	/*Formulario*/
+	#container{
+		width: 100%;
+		max-width: 600px;
+
+		background-color: #ffffff;
+		padding: 30px;
+
+		border-radius: 12px;
+		box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.289);
+	}
+
+	/* TÍTULO */
+	h1 {
+		text-align: center;
+		color: #1976d2;
+		margin-bottom: 30px;
+		font-size: 28px;
+	}
+
+	/* CAMPOS */
+	label {
+		display: block;
+		margin-bottom: 8px;
+		font-weight: bold;
+		color: #333;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		width: 100%;
+		padding: 12px;
+		margin-bottom: 20px;
+		border: 1px solid #ccc;
+		border-radius: 6px; font-size: 16px;
+		background-color: #fff;
+	}
+
+	/* EFEITO AO CLICAR NO CAMPO */
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+
+	textarea:focus {
+		outline: none;
+		border-color: #1976d2;
+	}
+
+	/* TEXTAREA */
+	textarea {
+		resize: vertical;
+	}
+
+	/* CHECKBOX */
+	.checkbox {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin-bottom: 25px;
+	}
+
+	.checkbox label {
+		margin: 0;
+		font-weight: normal;
+	}
+
+	.checkbox input {
+		width: 18px;
+		height: 18px;
+		accent-color: #1976d2;
+	}
+
+	/* BOTÕES */
+
+	.botoes {
+		display: flex;
+		gap: 15px;
+	}
+
+	.botoes input {
+		flex: 1;
+		padding: 12px;
+		border: none;
+		border-radius: 6px;
+		cursor: pointer;
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	.botoes input[type="submit"] {
+		background-color: #1976d2;
+		color: white;
+	}
+
+	.botoes input[type="reset"] {
+		background-color: #555;
+		color: white;
+	}
+
+	.botoes input:hover {
+		opacity: 0.85;
+	}
+
+	/* BOTÃO PÁGINA PRINCIPAL */
+
+	.botao-principal {
+		margin-top: 25px;
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 12px 20px;
+		background-color: #212121;
+		color: white;
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: bold;
+		transition: 0.3s;
+	}
+
+	.botao-principal:hover {
+		background-color: #1976d2;
+		transform: translateY(-2px);
+	}
+
+/* =========================
+   BOTÕES DE AÇÕES
+========================= */
+
+.acoes {
+    white-space: nowrap;
+}
+
+
+/* BOTÃO EDITAR */
+.botao-editar,
+.botao-excluir {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+    margin-right: 5px;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 17px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    vertical-align: middle;
+}
+
+
+/* EDITAR */
+.botao-editar {
+    background-color: #2563eb;
+    color: white;
+}
+
+
+/* EXCLUIR */
+.botao-excluir {
+    background-color: #dc2626;
+    color: white;
+}
+
+
+/* EFEITO EDITAR */
+.botao-editar:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* EFEITO EXCLUIR */
+.botao-excluir:hover {
+    background-color: #b91c1c;
+}
+
+/* ============================= */
+/* RESPONSIVIDADE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    #container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+}
+
+	

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+        <head>
+            {% load static %}
+
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Controle de Frota Empresarial</title>
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <link rel="shortcut icon" href="{% static 'img/html1200.jpg' %}" type="image/x-icon">
+            <script src="https://kit.fontawesome.com/412e60f1e0.js" crossorigin="anonymous"></script>
+        </head>
+    <body>
+        <div class="banner">
+            <img src ="{% static 'img/html1.jpg' %}">
+            <header>
+                <h1>CONTROLE DE FROTA EMPRESARIAL</h1>
+                <nav id="menu">
+                    <ul>
+                        <li><a href="{% url 'sobre' %}">Sobre Nossos Serviços</a></li>
+                        <li><a href="{% url 'lista_veiculos' %}">Veículos</a></li>
+                        <li><a href="{% url 'motoristas' %}">Motoristas</a></li>
+                        <li><a href="{% url 'comentarios' %}">Deixe sua opinião</a></li>
+                        <li>
+                            <a href="#" class="link" id="botao-tema"><i class="fa-solid fa-moon"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <footer>
+            <p>&copy; 2026 Controle de Frota Empresarial</p>
+        </footer>
+        <script src="{% static 'script/javascript/script.js' %}"></script>
+    </body>
+</html>
