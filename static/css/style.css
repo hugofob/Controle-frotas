@@ -133,31 +133,122 @@ body.escuro footer{
     background-color: rgb(245, 239, 239); /* Muda cor de fundo */
     color: rgb(19, 19, 19); /* Muda cor da letra */
 }
+/* ============================= */ /* RESPONSIVIDADE */ /* CELULARES, TABLETS E COMPUTADORES */ /* ============================= */ /* TABLETS E TELAS MÉDIAS */ 
+@media screen and (max-width: 1024px) { 
+	body { 
+		padding: 30px 20px; 
+	} 
+	
+	#container {
+		 max-width: 600px; padding: 25px; 
+	} 
+	h1 { 
+		font-size: 26px; margin-bottom: 25px; 
+	} 
+	
+	input[type="text"], 
+	input[type="email"], 
+	textarea { 
+		font-size: 16px; padding: 12px; 
+	} 
+	
+	.botoes { 
+		gap: 12px; 
+	} 
+} 
 
-/* ========================================= TABLET ========================================= */
-@media (max-width: 900px){
-    .introducao{
-        flex-direction: column; /* Coloca imagem abaixo do texto */
-        text-align: center; /* Centraliza o texto */
-    }
-    .sobre-imagem{
-        width: 100%; /* Ocupa toda a largura */
-    }
-    .sobre-imagem img{
-        max-width: 100%; /* Permite ocupar toda a largura */
-    }
-    .servicos{
-        grid-template-columns: repeat(2, 1fr); /* Mantém 2 cards por linha */
-    }
+/* CELULARES */ 
+@media screen and (max-width: 600px) { 
+	body { 
+		padding: 20px 12px;
+		align-items: center; 
+	} 
+	
+	#container { 
+		width: 100%; 
+		max-width: 100%; 
+		padding: 20px 16px; 
+		border-radius: 10px; 
+	} 
+	
+	h1 { 
+		font-size: 22px; 
+		margin-bottom: 22px; 
+	} 
+	
+	label { 
+		font-size: 15px; 
+	} 
+	
+	input[type="text"], 
+	input[type="email"], 
+	textarea { 
+		width: 100%; 
+		padding: 12px; 
+		margin-bottom: 16px; 
+		font-size: 16px; 
+	} 
+	
+	.checkbox { 
+		align-items: flex-start; 
+		gap: 10px; 
+		margin-bottom: 20px; 
+	} 
+	
+	.checkbox input { 
+		flex-shrink: 0; 
+		margin-top: 2px; 
+	} 
+	
+	.checkbox label { 
+		line-height: 1.4; 
+	} 
+	
+	.botoes { 
+		flex-direction: column;
+		gap: 12px; 
+	} 
+	
+	.botoes input { 
+		width: 100%;
+		min-height: 46px; 
+		font-size: 16px; 
+	} 
+	
+	.botao-principal { 
+		display: flex;
+		justify-content: center; 
+		width: 100%; 
+		padding: 12px 16px; 
+		text-align: center; 
+	} 
+} 
+
+/* CELULARES PEQUENOS */ 
+@media screen and (max-width: 360px) {
+	body { 
+		padding: 15px 8px; 
+	} 
+	
+	#container { 
+		padding: 16px 12px; 
+	}
+	
+	h1 { 
+		font-size: 20px; 
+		margin-bottom: 18px; 
+	} 
+	
+	label { 
+		font-size: 14px; 
+	} 
+	
+	.botoes input { 
+		font-size: 15px;
+		padding: 11px; 
+	} 
+	
+	.botao-principal { 
+		font-size: 14px; 
+	} 
 }
-
-/* ========================================= CELULAR ========================================= */
-@media (max-width: 600px){
-    body > h1{
-        font-size: 28px; /* Diminui o título */
-        padding: 35px 20px 15px; /* Diminui o espaço */
-    }
-    body > h2{
-        font-size: 16px; /* Diminui o subtítulo */
-        padding-bottom: 30px; /* Diminui o espaço inferior */
-    }
